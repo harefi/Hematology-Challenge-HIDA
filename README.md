@@ -1,6 +1,6 @@
 # Hematology Image Classification 🩸🔬 (Helmholtz HIDA Challenge 2022)
 
-[![CI](https://github.com/harefi/hematology-challenge/actions/workflows/ci.yml/badge.svg)](https://github.com/harefi/hematology-challenge/actions)
+[![CI](https://github.com/harefi/Hematology-Challenge-HIDA/actions/workflows/ci.yml/badge.svg)](https://github.com/harefi/Hematology-Challenge-HIDA/actions)
 [![Python](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Certificate](https://img.shields.io/badge/view-certificate-blue)](docs/certificate.pdf)
@@ -14,7 +14,7 @@
 ## 🚀 30‑second Quick Start
 ```bash
 # clone & set up env ─────────────────────────────
- git clone https://github.com/<your-user>/hematology-challenge.git
+ git clone https://github.com/harefi/Hematology-Challenge-HIDA.git
  cd hematology-challenge
  conda env create -f environment.yml      # or: pip install -e .[dev]
 
