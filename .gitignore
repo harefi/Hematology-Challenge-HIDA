@@ -1,0 +1,19 @@
+# ── Generic ───────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+*.log
+.ipynb_checkpoints/
+
+# ── Data & outputs (not versioned) ────────
+data/
+Source/
+results/
+*.pth
+*.zip
+
+# ── IDE / OS junk ─────────────────────────
+.vscode/
+.idea/
+.DS_Store

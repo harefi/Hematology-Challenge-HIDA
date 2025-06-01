@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hematol"
+version = "0.1.0"
+description = "Baseline pipeline for Helmholtz HIDA Hematology Image Classification Challenge"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Hadi Arefi", email = "hadi.arephi@gmail.com" }
+]
+dependencies = [
+  "torch>=2.0",
+  "torchvision>=0.15",
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "matplotlib",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "ruff",
+  "pytest",
+  "nbstripout",
+  "pre-commit",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
