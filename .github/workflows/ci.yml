@@ -1,0 +1,29 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install project & dev tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[dev]
+
+      - name: Black
+        run: black --check src/ tests/ scripts/
+
+      - name: Ruff
+        run: ruff check src/ tests/ scripts/
+
+      - name: PyTest
+        run: pytest -q
+
