@@ -228,16 +228,16 @@ Overall, the baseline model already does a good job on most classes. Later impro
 
 Based on what we saw, here are some ideas for future work:
 ### 1. Lineage-aware augmentations
-    Instead of very strong random augment, try milder transforms that preserve details for cells that look similar (e.g., myeloblast vs. metamyelocyte). That may reduce misclassifications within the same lineage.
+Instead of very strong random augment, try milder transforms that preserve details for cells that look similar (e.g., myeloblast vs. metamyelocyte). That may reduce misclassifications within the same lineage.
 
 ### 2. Custom loss for similar classes
-    Use a hierarchical or “clustered” loss that penalizes mistakes across broad categories (e.g., misclassifying a lymphocyte as a neutrophil) more than mistakes within the myeloid lineage (e.g., myelocyte vs. myeloblast). This can guide the model to learn sub-category differences more carefully.
+Use a hierarchical or “clustered” loss that penalizes mistakes across broad categories (e.g., misclassifying a lymphocyte as a neutrophil) more than mistakes within the myeloid lineage (e.g., myelocyte vs. myeloblast). This can guide the model to learn sub-category differences more carefully.
 
 ### 3. Ensemble of top models
-    Combine predictions from ResNet, EfficientNet, or other backbones (ConvNeXt, MobileNet, etc.). An ensemble often reduces errors by voting among models.
+Combine predictions from ResNet, EfficientNet, or other backbones (ConvNeXt, MobileNet, etc.). An ensemble often reduces errors by voting among models.
 
 ### 4. Self-supervised pre-training
-    Use the unlabeled images (if available) to pre-train a model with SimCLR/BYOL, then fine-tune on the 11 classes. This can help the network learn cell features without needing labels.
+Use the unlabeled images (if available) to pre-train a model with SimCLR/BYOL, then fine-tune on the 11 classes. This can help the network learn cell features without needing labels.
 
 Feel free to open an issue or submit a pull request if you want to explore any of these ideas.
 
@@ -246,13 +246,13 @@ Feel free to open an issue or submit a pull request if you want to explore any o
 ## 9 How to Update This Repo
 
 ### 1. Add new results
-    * If you run a new experiment (for example, a different backbone), create a new folder under `results/` (e.g., `20250606_153000_new_experiment/`).
-    * Make sure to save at least `training_log.csv`, a small plot (e.g., PNG), and summary CSV if you want to share metrics.
-    * __Do not__ commit large model files; keep models local or upload them somewhere else and link to them.
+* If you run a new experiment (for example, a different backbone), create a new folder under `results/` (e.g., `20250606_153000_new_experiment/`).
+* Make sure to save at least `training_log.csv`, a small plot (e.g., PNG), and summary CSV if you want to share metrics.
+* __Do not__ commit large model files; keep models local or upload them somewhere else and link to them.
 
 ### 2. Update the README
-    * Edit the “Results & Analysis” section to add your new experiment name, flags used, and best validation F1.
-    * If you generate new plots (e.g., a new confusion matrix), save them under `results/` and embed them in the README in the same way.
+* Edit the “Results & Analysis” section to add your new experiment name, flags used, and best validation F1.
+* If you generate new plots (e.g., a new confusion matrix), save them under `results/` and embed them in the README in the same way.
 
 ### 3. Commit changes
 
@@ -266,12 +266,12 @@ git push
 ```
 
 ### 4. Check CI
-    * Any changes to code should pass `black --check src/ tests/ scripts/`, `ruff check src/ tests/ scripts/`, and `pytest -q`.
-    * GitHub Actions will run these checks automatically when you open a pull request.
+* Any changes to code should pass `black --check src/ tests/ scripts/`, `ruff check src/ tests/ scripts/`, and `pytest -q`.
+* GitHub Actions will run these checks automatically when you open a pull request.
 
 ### 5. Merge to main
     
-    Once CI is green and the new results look correct, merge your changes into the `main` branch. That way, the public README and results display the latest experiments.
+Once CI is green and the new results look correct, merge your changes into the `main` branch. That way, the public README and results display the latest experiments.
 
 ---
 
