@@ -8,8 +8,8 @@ __pycache__/
 
 # ── Data & outputs (not versioned) ────────
 data/
-Source/
-results/
+#Source/
+#results/
 *.pth
 *.zip
 
