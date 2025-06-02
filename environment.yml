@@ -1,11 +1,11 @@
 name: hematol-chall-22
 dependencies:
-  - python=3.9
+  - python=3.11
   - tqdm
   - imageio
   - matplotlib
   - scikit-learn
   - pytorch
   - torchvision
-  - cudatoolkit=10.2
+  - cudatoolkit=12.2
   - pandas

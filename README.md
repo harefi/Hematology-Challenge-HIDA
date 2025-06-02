@@ -32,11 +32,11 @@ tensorboard --logdir results/*/tb --port 6006
 
 ```
 
-After running make train, you will see a folder under results/ named like 20250605_150210_baseline/. Inside that folder are:
-- train.log (console output)
-- training_log.csv (epoch, loss, accuracy, F1)
-- best_model.pth and last_model.pth (saved model files; not uploaded to GitHub)
-- tb/ (TensorBoard files)
+After running `make train`, you will see a folder under `results/` named like `20250605_150210_baseline/`. Inside that folder are:
+- `train.log` (console output)
+- `training_log.csv` (epoch, loss, accuracy, F1)
+- `best_model.pth` and `last_model.pth` (saved model files; not uploaded to GitHub)
+- `tb/` (TensorBoard files)
 - (No large model files are stored in the repo.)
 
 ---
@@ -88,10 +88,10 @@ pip install -e .[dev]
 ```
 The main packages installed are:
 
-* torch and torchvision (for neural networks)
-* numpy, pandas, scikit-learn
-* matplotlib, tqdm
-* black, ruff, pytest (for code formatting and tests)
+* `torch` and `torchvision` (for neural networks)
+* `numpy`, `pandas`, `scikit-learn`
+* `matplotlib`, `tqdm`
+* `black`, `ruff`, `pytest` (for code formatting and tests)
 
 ---
 
@@ -136,7 +136,7 @@ hematology-challenge/
 
 ## 5  Exploratory Data Analysis (EDA)
 
-Open notebooks/00_eda.ipynb to see how the data look:
+Open `notebooks/00_eda.ipynb` to see how the data look:
 *   We check class balance and image sizes.
 *   We display sample images from each class.
 
@@ -185,17 +185,18 @@ where `baseline_20250601_123456` is your existing results folder. The script wil
 ## 7  Results & Analysis
 We ran five different experiments. Below are the main findings.
 
-### 7.1  Best Validation F1 Scores
+### 7.1 Best Validation F1 Scores
 
-Experiment	Flags	Val Macro-F1
-baseline	ResNet-18 (default)	0.89
-weighted_loss	+ --weighted_loss	0.89
-strong_augment	+ --strong_augment	0.87
-b0	--model_name efficientnet_b0	0.90
-onecycle	EfficientNet-B0 + --amp --onecycle	0.91
+| Experiment        | Flags                                           | Val Macro-F1 |
+|-------------------|-------------------------------------------------|--------------|
+| **baseline**      | *(default, ResNet-18)*                          | 0.89         |
+| **weighted_loss** | `--weighted_loss`                               | 0.89         |
+| **strong_augment**| `--strong_augment`                              | 0.87         |
+| **b0**            | `--model_name efficientnet_b0`                  | 0.90         |
+| **onecycle**      | `--model_name efficientnet_b0 --amp --onecycle` | 0.91         |
 
 Below is a bar chart of those best F1 values:
-<p align="center"> <img src="results/summary_f1.png" width="600"> </p>
+![Best Validation Macro-F1](results/summary_f1.png)
 
 What this means
 * The plain ResNet-18 already reaches ~0.89 F1.
@@ -242,7 +243,39 @@ Feel free to open an issue or submit a pull request if you want to explore any o
 
 ---
 
-## 9  References
+## 9 How to Update This Repo
+
+### 1. Add new results
+    * If you run a new experiment (for example, a different backbone), create a new folder under `results/` (e.g., `20250606_153000_new_experiment/`).
+    * Make sure to save at least `training_log.csv`, a small plot (e.g., PNG), and summary CSV if you want to share metrics.
+    * __Do not__ commit large model files; keep models local or upload them somewhere else and link to them.
+
+### 2. Update the README
+    * Edit the “Results & Analysis” section to add your new experiment name, flags used, and best validation F1.
+    * If you generate new plots (e.g., a new confusion matrix), save them under `results/` and embed them in the README in the same way.
+
+### 3. Commit changes
+
+```
+git add README.md                 # after editing README
+git add results/summary_f1.png     # if you added or updated the F1 bar chart
+git add results/conf_matrix_baseline.png  # if you updated confusion matrix
+git add results/results_summary.csv       # if you updated summary CSV
+git commit -m "docs: update results with new experiments"
+git push
+```
+
+### 4. Check CI
+    * Any changes to code should pass `black --check src/ tests/ scripts/`, `ruff check src/ tests/ scripts/`, and `pytest -q`.
+    * GitHub Actions will run these checks automatically when you open a pull request.
+
+### 5. Merge to main
+    
+    Once CI is green and the new results look correct, merge your changes into the `main` branch. That way, the public README and results display the latest experiments.
+
+---
+
+## 10  References
 * [Helmholtz AI. *Data Challenge – Help a Hematologist Out* (2022).](https://www.helmholtz-hida.de/en/events/data-challenge-help-a-hematologist-out/)
 * Matek, C., Schwarz, S., Spiekermann, K. et al. Human-level recognition of blast cells in acute myeloid leukaemia with convolutional neural networks. Nat Mach Intell 1, 538–544 (2019). https://doi.org/10.1038/s42256-019-0101-9
 * Rupapara, V., Rustam, F., Aljedaani, W. et al. Blood cancer prediction using leukemia microarray gene data and hybrid logistic vector trees model. Sci Rep 12, 1000 (2022). https://doi.org/10.1038/s41598-022-04835-6

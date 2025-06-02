@@ -17,3 +17,28 @@ results/
 .vscode/
 .idea/
 .DS_Store
+
+# Ignore everything in results/ except PNG and CSV
+/results/*
+!/results/*.png
+!/results/*.csv
+
+# Ignore model checkpoints or TensorBoard files
+/results/**/*.pth
+/results/**/*/*.tfevents*
+/results/**/*/train.*
+/results/**/tb/
+
+# Keep Source/ folder structure but ignore actual data
+/Source/*
+!/Source/.gitkeep
+!/Source/Acevedo_20.zip
+!/Source/Matek_19.zip
+
+# Keep scripts directory and its code
+# (nothing to ignore inside scripts/ unless you have temp files)
+
+# Python caches
+__pycache__/
+*.py[cod]
+
