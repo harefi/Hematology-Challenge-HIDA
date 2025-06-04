@@ -7,6 +7,27 @@
 
 > **Project Goal:** Show a complete, reproducible pipeline for classifying blood-cell images. This is meant as a portfolio example, not to win the original challenge.
 
+# Hematology Image Classification (Helmholtz HIDA Challenge 2022)
+
+Below is one sample image for each of the 11 blood-cell classes:
+
+<p align="center">
+  <img src="figures/basophil.png" alt="basophil" width="100" />
+  <img src="figures/eosinophil.png" alt="eosinophil" width="100" />
+  <img src="figures/erythroblast.png" alt="erythroblast" width="100" />
+  <img src="figures/lymphocyte_typical.png" alt="lymphocyte_typical" width="100" />
+  <img src="figures/metamyelocyte.png" alt="metamyelocyte" width="100" />
+  <img src="figures/monocyte.png" alt="monocyte" width="100" />
+  <img src="figures/myeloblast.png" alt="myeloblast" width="100" />
+  <img src="figures/myelocyte.png" alt="myelocyte" width="100" />
+  <img src="figures/neutrophil_banded.png" alt="neutrophil_banded" width="100" />
+  <img src="figures/neutrophil_segmented.png" alt="neutrophil_segmented" width="100" />
+  <img src="figures/promyelocyte.png" alt="promyelocyte" width="100" />
+</p>
+
+**Figure 1**: Sample images (cropped and resized) from each blood-cell class.
+
+
 [🔗 Official challenge page](https://www.helmholtz-hida.de/en/events/data-challenge-help-a-hematologist-out/)
 
 ---

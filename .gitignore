@@ -42,3 +42,5 @@ data/
 __pycache__/
 *.py[cod]
 
+# Track figures/ so README images render
+!/figures/
