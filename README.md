@@ -11,7 +11,7 @@
 
 Below is one sample image for each of the 11 blood-cell classes:
 
-<p align="center">
+<div align="center">
   <img src="figures/basophil.png" alt="basophil" width="100" />
   <img src="figures/eosinophil.png" alt="eosinophil" width="100" />
   <img src="figures/erythroblast.png" alt="erythroblast" width="100" />
@@ -23,9 +23,10 @@ Below is one sample image for each of the 11 blood-cell classes:
   <img src="figures/neutrophil_banded.png" alt="neutrophil_banded" width="100" />
   <img src="figures/neutrophil_segmented.png" alt="neutrophil_segmented" width="100" />
   <img src="figures/promyelocyte.png" alt="promyelocyte" width="100" />
-</p>
+<br/>
+  <strong>Figure 1</strong>: One sample image for each of the 11 blood‐cell classes.
+</div>
 
-**Figure 1**: Sample images (cropped and resized) from each blood-cell class.
 
 
 [🔗 Official challenge page](https://www.helmholtz-hida.de/en/events/data-challenge-help-a-hematologist-out/)
