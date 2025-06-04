@@ -130,6 +130,7 @@ hematology-challenge/
 ├── notebooks/
 │   ├── 00_eda.ipynb            # exploratory data analysis
 │   └── 01_starter_notebook.ipynb # original starter notebook from organizers
+├── figures/                    #  sample thumbnails (one per blood-cell class)
 ├── results/                    # training output (git-ignored except plots/CSV)
 ├── scripts/
 │   └── analyze_results.py      # script to make plots from results/
